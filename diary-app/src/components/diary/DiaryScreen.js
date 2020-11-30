@@ -1,9 +1,14 @@
 import React from 'react';
+import { Sidebar } from './Sidebar';
 
 export const DiaryScreen = () => {
 	return (
-		<div>
-			<h1>DiaryScreen</h1>
+		<div className='diary__main-content'>
+			<Sidebar />
+
+			<main>
+				<h1>Main content</h1>
+			</main>
 		</div>
 	);
 };

@@ -20,7 +20,10 @@ export const LoginScreen = () => {
 					className='auth__input'
 					autoComplete='off'
 				/>
-				<button type='submit' className='btn btn-primary btn-block'>
+				<button
+					type='submit'
+					className='btn btn-primary btn-block mt-1'
+				>
 					Login
 				</button>
 				<hr />

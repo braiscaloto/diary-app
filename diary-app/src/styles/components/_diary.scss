@@ -1,0 +1,77 @@
+.diary__main-content {
+	display: flex;
+}
+.diary__sidebar {
+	background-color: $primary;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 425px;
+}
+.diary__sidebar-navbar {
+	display: flex;
+	justify-content: space-between;
+}
+.diary__sidebar-navbar h3 {
+	font-weight: lighter;
+}
+.diary__new-entry {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 25px;
+	width: 100%;
+	transition: color 0.5s ease-in;
+	&:hover {
+		color: darken($color: $orange, $amount: 25);
+	}
+}
+.diary__entries {
+	flex: 1 1 auto;
+	margin-top: 30px;
+	overflow: scroll;
+}
+
+.diary__entry {
+	background-color: white;
+	border-radius: 4px;
+	color: $dark-grey;
+	display: flex;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.diary__entry-picture {
+	height: 75px;
+	width: 75px;
+}
+
+.diary__entry-body {
+	padding: 5px;
+}
+
+.diary__entry-title {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.diary__entry-content {
+	font-size: 12px;
+}
+
+.diary__entry-date-box {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 5px;
+}
+
+.diary__entry-date-box span {
+	font-size: 12px;
+}
