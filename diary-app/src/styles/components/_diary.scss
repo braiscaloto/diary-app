@@ -26,9 +26,9 @@
 	justify-content: center;
 	margin-top: 25px;
 	width: 100%;
-	transition: color 0.5s ease-in;
+	transition: color 0.5s ease-in-out;
 	&:hover {
-		color: darken($color: $orange, $amount: 25);
+		color: darken($color: $orange, $amount: 10);
 	}
 }
 .diary__entries {
