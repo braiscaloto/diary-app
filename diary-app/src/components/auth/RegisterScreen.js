@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import validator from 'validator';
 import { setError, setRemoveError } from '../../actions/ui';
+import { startRegisterEmailPassword } from '../../actions/auth';
 
 export const RegisterScreen = () => {
 	const dispatch = useDispatch();
@@ -19,7 +20,9 @@ export const RegisterScreen = () => {
 
 	const handleregister = (e) => {
 		e.preventDefault();
-		isFormValid();
+		if (isFormValid()) {
+			dispatch(startRegisterEmailPassword(email, password, name));
+		}
 	};
 	const isFormValid = () => {
 		if (name.trim().length < 3) {

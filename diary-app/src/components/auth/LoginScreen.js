@@ -1,8 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import validator from 'validator';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
+import { setError, startLoading } from '../../actions/ui';
 
 export const LoginScreen = () => {
 	const dispatch = useDispatch();
@@ -13,21 +16,31 @@ export const LoginScreen = () => {
 	});
 
 	const { email, password } = formValues;
+	const { loading } = useSelector((state) => state.ui);
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-		dispatch(startLoginEmailPassword(email, password));
-		console.log(email, password);
+		if (isValidForm()) {
+			dispatch(startLoginEmailPassword(email, password));
+		}
 	};
 	const handleGoogleLogin = () => {
 		dispatch(startGoogleLogin());
+	};
+	const isValidForm = () => {
+		if (!validator.isEmail(email)) {
+			dispatch(setError('Email is not valid'));
+			console.log('Email is not valid');
+			return false;
+		}
+		return true;
 	};
 	return (
 		<div>
 			<h3 className='auth__title'>Login</h3>
 			<form onSubmit={handleLogin}>
 				<input
-					type='text'
+					type='email'
 					placeholder='Email'
 					name='email'
 					autoComplete='off'
@@ -47,6 +60,7 @@ export const LoginScreen = () => {
 				<button
 					type='submit'
 					className='btn btn-primary btn-block mt-1'
+					disabled={loading}
 				>
 					Login
 				</button>
