@@ -1,4 +1,5 @@
 .notes__main-content {
+	background-image: url('https://www.cisidoro.com/wp-content/uploads/2017/03/fondo-degradado-inicio-1024x549.jpg');
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -22,6 +23,7 @@
 
 .notes__title-input,
 .notes__textarea {
+	background: none;
 	border: none;
 
 	&:focus {
