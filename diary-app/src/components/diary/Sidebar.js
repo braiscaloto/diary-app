@@ -7,10 +7,10 @@ export const Sidebar = () => {
 		<aside className='diary__sidebar'>
 			<div className='diary__sidebar-navbar'>
 				<h3 className='mt-5'>
-					<i className='far fa-star' />
+					<i className='far fa-moon' />
 					<span> Brais</span>
 				</h3>
-				<button className='btn'>Logout</button>
+				<button className='btn mt-3'>Logout</button>
 			</div>
 			<div className='diary__new-entry'>
 				<i className='far fa-calendar-plus fa-5x' />
