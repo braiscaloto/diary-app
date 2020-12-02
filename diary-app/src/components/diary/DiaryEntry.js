@@ -12,7 +12,10 @@ export const DiaryEntry = ({ id, date, title, body, url }) => {
 	};
 
 	return (
-		<div className='diary__entry pointer' onClick={handleEntry}>
+		<div
+			className='diary__entry pointer animate__animated animate__bounce'
+			onClick={handleEntry}
+		>
 			{url && (
 				<div
 					className='diary__entry-picture'

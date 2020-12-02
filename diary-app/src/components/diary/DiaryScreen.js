@@ -7,7 +7,7 @@ import { Sidebar } from './Sidebar';
 export const DiaryScreen = () => {
 	const { active } = useSelector((state) => state.notes);
 	return (
-		<div className='diary__main-content'>
+		<div className='diary__main-content animate__animated animate__fadeIn animate__faster'>
 			<Sidebar />
 
 			<main>{active ? <NoteScreen /> : <NothingSelected />}</main>

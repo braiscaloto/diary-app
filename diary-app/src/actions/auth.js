@@ -3,6 +3,7 @@ import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { useSelector } from 'react-redux';
 import { finishLoading, startLoading } from './ui';
 import Swal from 'sweetalert2';
+import { logoutNote } from '../actions/notes';
 
 export const startLoginEmailPassword = (email, password) => {
 	return (dispatch) => {
@@ -60,6 +61,7 @@ export const startLogout = () => {
 		await firebase.auth().signOut();
 
 		dispatch(logout());
+		dispatch(logoutNote());
 		Swal.fire({
 			title: 'Session close',
 			text: 'See you soon',
