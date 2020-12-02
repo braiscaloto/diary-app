@@ -22,7 +22,7 @@ export const Sidebar = () => {
 					<i className='far fa-moon' />
 					<span> {name}</span>
 				</h3>
-				<button className='btn mt-1-2' onClick={handleLogout}>
+				<button className='btn-3 mt-1-2' onClick={handleLogout}>
 					Logout
 				</button>
 			</div>

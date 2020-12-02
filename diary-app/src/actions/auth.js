@@ -60,6 +60,11 @@ export const startLogout = () => {
 		await firebase.auth().signOut();
 
 		dispatch(logout());
+		Swal.fire({
+			title: 'Session close',
+			text: 'See you soon',
+			allowOutsideClick: false,
+		});
 	};
 };
 

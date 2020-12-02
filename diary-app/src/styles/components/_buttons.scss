@@ -7,12 +7,51 @@
 	padding: 8px 10px 8px 10px;
 
 	transition: color 0.4s ease-in;
+	transition: transform 0.4s ease-in;
+
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		transform: scale(1.2);
+		color: darken($color: $primary, $amount: 0);
+	}
+}
+.btn-2 {
+	background-color: transparent;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 12px;
+	padding: 8px 10px 8px 10px;
+
+	transition: color 0.4s ease-in;
+	transition: transform 0.4s ease-in;
 
 	&:focus {
 		outline: none;
 	}
 	&:hover {
 		color: darken($color: white, $amount: 50);
+	}
+}
+.btn-3 {
+	background-color: transparent;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 12px;
+	padding: 8px 10px 8px 10px;
+
+	transition: color 0.4s ease-in;
+	transition: transform 0.4s ease-in;
+
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		color: darken($color: $orange, $amount: 10);
+		transform: scale(1.2);
 	}
 }
 
@@ -27,6 +66,15 @@
 	&:hover {
 		color: $primary;
 		background-color: $orange;
+	}
+}
+.btn-danger {
+	background-color: orangered;
+
+	transition: background-color 0.4s ease-in;
+	&:hover {
+		background-color: darken($color: orangered, $amount: 10);
+		color: white;
 	}
 }
 .btn-block {
