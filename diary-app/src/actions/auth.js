@@ -2,6 +2,7 @@ import { types } from '../types/types';
 import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { useSelector } from 'react-redux';
 import { finishLoading, startLoading } from './ui';
+import Swal from 'sweetalert2';
 
 export const startLoginEmailPassword = (email, password) => {
 	return (dispatch) => {
@@ -14,8 +15,8 @@ export const startLoginEmailPassword = (email, password) => {
 				dispatch(finishLoading());
 			})
 			.catch(({ message }) => {
-				console.log(message);
 				dispatch(finishLoading());
+				Swal.fire('Error', message, 'error');
 			});
 	};
 };
@@ -32,7 +33,7 @@ export const startRegisterEmailPassword = (email, password, name) => {
 				console.log(user);
 				dispatch(login(user.uid, user.displayName));
 			})
-			.catch(({ message }) => console.log(message));
+			.catch(({ message }) => Swal.fire('Error', message, 'error'));
 	};
 };
 
@@ -54,3 +55,15 @@ export const startGoogleLogin = () => {
 			});
 	};
 };
+
+export const startLogout = () => {
+	return async (dispatch) => {
+		await firebase.auth().signOut();
+
+		dispatch(logout());
+	};
+};
+
+export const logout = () => ({
+	type: types.logout,
+});

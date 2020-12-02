@@ -8,7 +8,7 @@ export const DiaryEntry = () => {
 				style={{
 					backgroundSize: 'cover',
 					backgroundImage:
-						'url(https://lh3.googleusercontent.com/proxy/FPTNkwDGKwvrjnwx4RQYGVDKI8l89vDXCj5y1IfRlzGyKWtVHrcPlsdDrGgq9kW9c9qHUblW9SQNRrDgjed-Pl7GefNyKvrovrcTr-pZsy6fN01XgnX4FA1JKrTEp8wESmV56tZWpDNhKFODJRkLSNymt_yNnKnKRSTYc7bEig15mGZ0)',
+						'url(https://www.dzoom.org.es/wp-content/uploads/2017/07/via-lactea-lightpainting-810x540.jpg)',
 				}}
 			></div>
 			<div className='diary__entry-body'>
