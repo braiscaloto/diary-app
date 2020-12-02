@@ -30,7 +30,6 @@ export const LoginScreen = () => {
 	const isValidForm = () => {
 		if (!validator.isEmail(email)) {
 			dispatch(setError('Email is not valid'));
-			console.log('Email is not valid');
 			return false;
 		}
 		return true;

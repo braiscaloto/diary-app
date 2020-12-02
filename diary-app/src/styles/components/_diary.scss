@@ -44,6 +44,14 @@
 	display: flex;
 	margin-bottom: 10px;
 	overflow: hidden;
+
+	&:hover {
+		transform: scale(0.9);
+		-ms-transform: scale(0.9); // IE 9
+		-moz-transform: scale(0.9); // Firefox
+		-webkit-transform: scale(0.9); // Safari and Chrome
+		-o-transform: scale(0.9); // Opera
+	}
 }
 
 .diary__entry-picture {

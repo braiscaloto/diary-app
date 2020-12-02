@@ -1,25 +1,28 @@
 import React from 'react';
+import moment from 'moment';
 
-export const DiaryEntry = () => {
+export const DiaryEntry = ({ id, date, title, body, url }) => {
+	const notesDate = moment(date);
+	console.log(notesDate);
+
 	return (
 		<div className='diary__entry pointer'>
-			<div
-				className='diary__entry-picture'
-				style={{
-					backgroundSize: 'cover',
-					backgroundImage:
-						'url(https://www.dzoom.org.es/wp-content/uploads/2017/07/via-lactea-lightpainting-810x540.jpg)',
-				}}
-			></div>
+			{url && (
+				<div
+					className='diary__entry-picture'
+					style={{
+						backgroundSize: 'cover',
+						backgroundImage: `url(${url})`,
+					}}
+				></div>
+			)}
 			<div className='diary__entry-body'>
-				<p className='diary__entry-title'>New day</p>
-				<p className='diary__entry-content'>
-					Esse sint consectetur elit Lorem.
-				</p>
+				<p className='diary__entry-title'>{title}</p>
+				<p className='diary__entry-content'>{body}</p>
 			</div>
 			<div className='diary__entry-date-box'>
-				<span>Sunday</span>
-				<h4>10</h4>
+				<span>{notesDate.format('dddd')}</span>
+				<h4>{notesDate.format('Do')}</h4>
 			</div>
 		</div>
 	);
